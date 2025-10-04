@@ -10,7 +10,7 @@ dotenv.config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin: [https://online-res-front.vercel.app/],
+    origin: [process.env.FRONTEND_URL],
     methods: ["POST"],
     credentials: true,
   })
