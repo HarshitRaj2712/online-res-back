@@ -8,6 +8,8 @@ import { dbConnection } from "./database/dbConnection.js";
 const app = express();
 dotenv.config({ path: "./config/config.env" });
 
+dbConnection();
+
 
 app.use(
   cors({
@@ -26,7 +28,7 @@ app.get("/", (req, res, next)=>{return res.status(200).json({
   message: "HELLO WORLD AGAIN"
 })})
 
-dbConnection();
+
 
 app.use(errorMiddleware);
 
