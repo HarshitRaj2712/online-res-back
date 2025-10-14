@@ -13,7 +13,10 @@ dbConnection();
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: [process.env.FRONTEND_URL, 
+      "http://localhost:5173",
+      "https://online-res-front.vercel.app",
+      /\.vercel\.app$/],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
