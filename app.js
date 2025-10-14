@@ -11,10 +11,7 @@ dotenv.config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin: [
-    "http://localhost:5173",              // for local dev
-    "https://online-res-front.vercel.app" // your deployed frontend
-  ],
+    origin: [process.env.FRONTEND_URL],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
